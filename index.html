@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>가정의 벗 — 표지와 광고 아카이브</title>
+  <meta name="description" content="1968–2005, 가정의 벗 표지와 광고 아카이브.">
+  <!-- 검토 기간에는 검색엔진 노출 막기 — 정식 공개할 때 이 줄 삭제 -->
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='white'/%3E%3Ctext x='4' y='25' font-size='26' fill='red'%3E벗%3C/text%3E%3C/svg%3E">
+
+  <!-- 글꼴: 라틴 · 한글 기본 글자는 미리 받아 둠 -->
+  <link rel="preload" href="assets/fonts/noto-serif-kr-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/noto-serif-kr-400-hangul.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- 순서 중요: 데이터 → 문구 → 화면 동작 -->
+  <script defer src="data.js"></script>
+  <script defer src="translations.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#content">본문으로 이동</a>
+
+  <!-- app.js 가 내용을 채웁니다 -->
+  <header id="header"></header>
+  <main id="content"></main>
+
+  <!-- 상세 모달 -->
+  <dialog id="detail" aria-labelledby="detail-title" tabindex="-1">
+    <div id="detail-content"></div>
+  </dialog>
+
+  <!-- 알림창: "대분류를 먼저 선택해 주세요" -->
+  <dialog id="notice" class="notice" aria-labelledby="notice-message">
+    <p id="notice-message"></p>
+    <button type="button" class="text notice-ok" data-notice-ok></button>
+  </dialog>
+
+  <!-- 스크립트 파일을 못 불러왔을 때 안내 -->
+  <script>
+    window.addEventListener('error', event => {
+      if (event.target?.tagName === 'SCRIPT') {
+        document.getElementById('content').textContent = '파일을 불러오지 못했습니다. 페이지를 새로고침해 주세요.';
+      }
+    }, true);
+  </script>
+</body>
+</html>

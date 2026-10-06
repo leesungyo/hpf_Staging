@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace version="1.0">
+  <FileRef location="group:index.html"></FileRef>
+  <FileRef location="group:styles.css"></FileRef>
+  <FileRef location="group:reference.css"></FileRef>
+  <FileRef location="group:app.js"></FileRef>
+  <FileRef location="group:data.js"></FileRef>
+  <FileRef location="group:translations.js"></FileRef>
+  <FileRef location="group:README.md"></FileRef>
+</Workspace>
