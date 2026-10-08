@@ -49,7 +49,8 @@ const CONFIG = {
   },
 
   // 데이터 연결 링크 (소개문 안 {link} 자리)
-  dataLink: 'https://hh-archive.com',
+   //26100853https://hh-archive-rawdata.com 수정
+  dataLink: 'https://hh-archive-rawdata.com',
 };
 
 const RECORDS = window.ARCHIVE_RECORDS;   // data.js
@@ -223,7 +224,7 @@ function landingHTML() {
   const title = state.lang === 'ko' ? `『${esc(t('title'))}』` : esc(t('title'));   // 한글일 때만 『 』
   const intro = esc(t('intro'))
     .replace(/\n/g, '<br>')
-    .replace('{link}', `<a class="intro-link" href="${CONFIG.dataLink}" target="_blank" rel="noopener">hh-archive.com</a>`);
+    .replace('{link}', `<a class="intro-link" href="${CONFIG.dataLink}" target="_blank" rel="noopener">hh-archive-rawdata.com</a>`); //261008 hh-archive-rawdata.com로 수정
   const langButton = (lang, text) =>
     `<button class="text ${state.lang === lang ? 'selected' : ''}" data-lang="${lang}" aria-pressed="${state.lang === lang}">[${text}]</button>`;
 
