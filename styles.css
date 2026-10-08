@@ -579,3 +579,6 @@ dialog:focus { outline: 0; }
 
   .notice { min-width: 0; width: calc(100vw - 40px); padding: 24px 18px 14px; }
 }
+
+/* 261008 랜딩 제목: 영문일 때 "Happy Home"만 이탤릭 (Noto Serif KR은 이탤릭이 없어 브라우저가 기울여 만듦) */
+.home-title-name { font-style: italic; }

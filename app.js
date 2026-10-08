@@ -221,7 +221,9 @@ function headerHTML() {
 // 랜딩 페이지 (인트로)
 function landingHTML() {
   const link = (view, text) => `<a href="#${view}">${text}</a>`;
-  const title = state.lang === 'ko' ? `『${esc(t('title'))}』` : esc(t('title'));   // 한글일 때만 『 』
+  const title = state.lang === 'ko'
+    ? `『${esc(t('title'))}』`                                   // 한글: 『 』로 감쌈
+    : `<em class="home-title-name">${esc(t('title'))}</em>`;   // 261008 영문: Happy Home 이탤릭
   const intro = esc(t('intro'))
     .replace(/\n/g, '<br>')
     .replace('{link}', `<a class="intro-link" href="${CONFIG.dataLink}" target="_blank" rel="noopener">hh-archive-rawdata.com</a>`); //261008 hh-archive-rawdata.com로 수정
